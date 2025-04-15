@@ -1,50 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Estilos para el menú móvil */
+      @media (max-width: 768px) {
+        .mobile-menu {
+          display: none;
+        }
+        .mobile-menu.active {
+          display: flex;
+        }
+      }
 
+      /* Animaciones suaves */
+      a,
+      button,
+      .border-4 {
+        transition: all 0.3s ease;
+      }
+
+      /* Mejoras para scroll suave */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
     <title>Portafolio Jennifer Arciniegas</title>
   </head>
-  <body>
-    <thead>
-      <nav class="bg-gray-100 justify-between flex gap-2 p-2 font-bold">
-        <div class="m-2 text-gray-700 hover:text-white"><h1>hello</h1></div>
-        <div class="m-2 flex gap-10">
-          <h2 class="text-gray-500 hover:text-gray-700 text-lg">
-            <a href="#sobreMi">Sobre mi</a>
-          </h2>
-          <h2 class="text-gray-500 hover:text-gray-700 text-lg"><a href="/src/pages/Achive.html">Archive</a></h2>
-          <h2 class="text-gray-500 hover:text-gray-700 text-lg"> <a href="/src/pages/Contact.html">Contact</a></h2>
+  <body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div
+          class="text-2xl font-bold text-gray-800 hover:text-purple-600 transition-colors"
+        >
+          <a href="/">Hello</a>
         </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#sobreMi"
+            class="text-gray-600 hover:text-purple-600 transition-colors font-medium"
+            >Sobre mí</a
+          >
+          <a
+            href="#proyectos"
+            class="text-gray-600 hover:text-purple-600 transition-colors font-medium"
+            >Proyectos</a
+          >
+          <a
+            href="/src/pages/Contact.html"
+            class="text-gray-600 hover:text-purple-600 transition-colors font-medium"
+            >Contacto</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-gray-600 focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
       </nav>
-    </thead>
-    <tbody>
-      <section class="grid grid-cols-2 h-140">
-        <div class="bg-white text-4xl md:text-6xl font-bold pt-24">
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu md:hidden flex-col space-y-4 py-4 px-6 bg-white border-t"
+      >
+        <a
+          href="#sobreMi"
+          class="text-gray-600 hover:text-purple-600 transition-colors font-medium py-2"
+          >Sobre mí</a
+        >
+        <a
+          href="#proyectos"
+          class="text-gray-600 hover:text-purple-600 transition-colors font-medium py-2"
+          >Proyectos</a
+        >
+        <a
+          href="/src/pages/Contact.html"
+          class="text-gray-600 hover:text-purple-600 transition-colors font-medium py-2"
+          >Contacto</a
+        >
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <section class="grid md:grid-cols-2 grid-cols-1 min-h-[500px]">
+        <div class="bg-white text-4xl md:text-6xl font-bold pt-12 md:pt-24">
           <div class="m-6 p-6">
             <h2 class="text-violet-500">Desarrolladora</h2>
             <h2 class="text-black">de Software</h2>
             <p class="text-xl text-normal text-gray-600 pt-4">
-              Creando soluciones de software, full-Stack Especializada en java
+              Creando soluciones de software, full-Stack Especializada en Java
             </p>
           </div>
         </div>
 
         <div class="bg-white p-4 flex justify-center items-center">
-          <div class="bg-gray-100 h-64 w-120 flex justify-center">video</div>
+          <div
+            class="bg-gray-100 h-64 w-full md:w-[480px] flex justify-center items-center rounded-lg shadow-md"
+          >
+            video
+          </div>
         </div>
       </section>
-      <section class="bg-gray-50" name="sobreMi" id="sobreMi">
-        <div class="pt-6 h-140 flex justify-center">
-          <div class="p-12">
-            <h2 class="font-bold md:text-4xl flex justify-center">Sobre mi</h2>
-            <p
-              class="pt-4 flex justify-center text-center md: text-2xl text-gray-600"
-            >
-              Soy una desarrolladora de software capaz de crear paginas web
-              empleando tecnológicas que resuelvan problemas reales. Mi
+
+      <!-- About Me Section -->
+      <section id="sobreMi" class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto p-6">
+            <h2 class="font-bold text-3xl md:text-4xl text-center mb-8">
+              Sobre mí
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-600 text-center">
+              Soy una desarrolladora de software capaz de crear páginas web
+              empleando tecnologías que resuelvan problemas reales. Mi
               experiencia abarca desde el desarrollo web frontend y backend
               hasta aplicaciones en Python y Java.
             </p>
@@ -52,60 +145,175 @@
         </div>
       </section>
 
-      <section class=" md:text-4xl text-center h-130 ">
-        <h2 class="font-bold  pt-12" >Proyectos</h2>
-        <div class="grid grid-cols-3 p-6 justify-items-center h-86 pt-12">
-          <div class="rounded-lg border-blue-100 border-4 shadow-lg   hover:shadow-blue-500/50   p-4 m-4 w-82">
-            <h1>Phyton Projects</h1>
-          </div>
-          <div class="rounded-lg border-blue-100 border-4 shadow-lg   hover:shadow-blue-500/50   p-4 m-4 w-82">
-            <h1>Web Pages</h1></div>
-          <div class="rounded-lg border-blue-100 border-4 shadow-lg   hover:shadow-blue-500/50   p-4 m-4 w-82">
-            <h1>  java  </h1>
+      <!-- Projects Section -->
+      <section id="proyectos" class="py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="font-bold text-3xl md:text-4xl text-center mb-12">
+            Proyectos
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div
+              class="rounded-lg border-blue-100 border-4 shadow-lg hover:shadow-blue-500/50 p-6 transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <h3 class="text-xl font-semibold mb-4">Python Projects</h3>
+              <p class="text-gray-600">
+                Proyectos desarrollados con Python y sus frameworks
+              </p>
+            </div>
+            <div
+              class="rounded-lg border-blue-100 border-4 shadow-lg hover:shadow-blue-500/50 p-6 transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <h3 class="text-xl font-semibold mb-4">Web Pages</h3>
+              <p class="text-gray-600">
+                Sitios web responsivos con tecnologías modernas
+              </p>
+            </div>
+            <div
+              class="rounded-lg border-blue-100 border-4 shadow-lg hover:shadow-blue-500/50 p-6 transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <h3 class="text-xl font-semibold mb-4">Java</h3>
+              <p class="text-gray-600">
+                Aplicaciones y servicios desarrollados con Java
+              </p>
+            </div>
           </div>
         </div>
       </section>
-      <section>
-          <h2 class=" m-4 p-4">habilidades tecnicas</h2>
 
-        <div class=" grid grid-cols-4 grid-rows-2 gap-6 justify-center m-4 p-4">
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Java </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Python  </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Jira </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">SQL </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Tailwind CSS   </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Java Script </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Html  </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Css 3 </div>
+      <!-- Technical Skills Section -->
+      <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="font-bold text-3xl md:text-4xl text-center mb-12">
+            Habilidades Técnicas
+          </h2>
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto"
+          >
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Java
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Python
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Jira
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              SQL
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Tailwind CSS
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              JavaScript
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              HTML
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              CSS 3
+            </div>
+          </div>
         </div>
-        <h2 class=" m-4 p-4">habilidades</h2>
-
-        <div class=" grid grid-cols-4 grid-rows-2 gap-6 justify-center m-4 p-4">
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Comunicacion Asertiva </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Buena escucha  </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Adaptabilidad </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Resilencia </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Liderazgo   </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Empatia </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center">Trabajo en equipo </div>
-        <div class="border-4 border-blue-100 w-50 h-18 flex justify-center items-center"> Enfocada</div>
-        </div>
-
-        
       </section>
-    </tbody>
-    <footer  class="bg-gray-500 text-white text-center p-4 h-24"> 
-      <div class="grid grid-cols-3">
-        <div class="flex gap-6"> 
-            <div> <a href="https://github.com/jennifer-Arciniegas">  <img src="/src/img/github.png" alt="github" class="h-10 ">  </a>  </div>
-             <div> <a href="https://www.linkedin.com/in/jennifer-arciniegas-arciniegas-300628245/"> <img src="/src/img/linkedinDark.png" alt="Linkedin" class="h-10"></a>  </div> 
-          
+
+      <!-- Soft Skills Section -->
+      <section class="py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="font-bold text-3xl md:text-4xl text-center mb-12">
+            Habilidades Blandas
+          </h2>
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto"
+          >
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Comunicación Asertiva
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Buena Escucha
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Adaptabilidad
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Resiliencia
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Liderazgo
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Empatía
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Trabajo en Equipo
+            </div>
+            <div
+              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+            >
+              Enfocada
+            </div>
+          </div>
         </div>
-        <div><p>derechos reservados</p></div>
-        <div></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-700 text-white py-6">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <div class="flex justify-center md:justify-start space-x-4">
+            <a
+              href="https://github.com/jennifer-Arciniegas"
+              class="hover:opacity-80 transition-opacity"
+            >
+              <img src="/src/img/github.png" alt="GitHub" class="h-8" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jennifer-arciniegas-arciniegas-300628245/"
+              class="hover:opacity-80 transition-opacity"
+            >
+              <img src="/src/img/linkedinDark.png" alt="LinkedIn" class="h-8" />
+            </a>
+          </div>
+          <div class="text-center text-sm">
+            <p>© 2025 Todos los Derechos Reservados</p>
+          </div>
+          <div></div>
+        </div>
       </div>
-
     </footer>
 
+    <!-- Script -->
+    <script src="/src/Script/home.js"></script>
   </body>
 </html>
