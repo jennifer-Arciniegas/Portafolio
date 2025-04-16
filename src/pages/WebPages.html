@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      @media (max-width: 768px) {
+        .mobile-menu {
+          display: none;
+        }
+        .mobile-menu.active {
+          display: flex;
+        }
+      }
+    </style>
+    <title>Web projects</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="bg-white shadow-sm">
+      <nav
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div
+          class="text-2xl font-bold text-gray-800 hover:text-purple-600 transition-colors"
+        >
+          <a href="/">Hello</a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="/index.html"
+            class="text-gray-600 hover:text-purple-600 transition-colors font-medium"
+            >Sobre mí</a
+          >
+          <a
+            href="/src/pages/Contact.html"
+            class="text-gray-600 hover:text-purple-600 transition-colors font-medium"
+            >Archive</a
+          >
+          <a href="/src/pages/Contact.html" class="text-purple-600 font-medium"
+            >Contacto</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-gray-600 focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu md:hidden flex-col space-y-4 py-4 px-6 bg-white border-t"
+      >
+        <a
+          href="/index.html"
+          class="text-gray-600 hover:text-purple-600 transition-colors font-medium py-2"
+          >Sobre mí</a
+        >
+        <a
+          href="/src/pages/Contact.html"
+          class="text-gray-600 hover:text-purple-600 transition-colors font-medium py-2"
+          >Archive</a
+        >
+        <a
+          href="/src/pages/Contact.html"
+          class="text-purple-600 font-medium py-2"
+          >Contacto</a
+        >
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="grid grid-cols-3 px-4 py-8 gap-4 ">
+          <div class="bg-gray-100 p-6  hover:bg-purple-100 rounded-lg hover:shadow-lg  hover:shadow-purple-200 transition  duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 ">
+            <a
+              href="https://jennifer-arciniegas.github.io/Hotel/"
+              target="_blank"
+            >
+              <h2 class="font-bold ">Hotel El Rincón del Carmen</h2>
+              <br>  
+              <p>
+                Explora nuestro sitio web de exposición donde podrás conocer la
+                variedad gastronómica y las zonas sociales que ofrece el Hotel
+                Rincón del Carme.
+              </p> 
+              <br>
+              <p>Regístrate para acceder a todas las funcionalidades:</p>
+              <li>Inicia sesión y habilita la pestaña de reservas.</li>
+              <li>Filtra habitaciones según la cantidad de personas.</li>
+              <li>Visualiza tus reservas realizadas fácilmente.</li>
+            </a>
+          </div>
+          <div>rrfrf</div>
+          <div>frfrfr</div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="/src/Script/contactos.js"></script>
+</html>
