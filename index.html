@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
     <link rel="stylesheet" href="styles.css" />
     <style>
       /* Estilos para el menú móvil */
@@ -193,112 +195,59 @@
           </div>
         </div>
       </section>
-
-      <!-- Technical Skills Section -->
-      <section class="bg-gray-50 py-16">
-        <div class="container mx-auto px-4">
+      <section class="bg-gray-50 py-16" x-data="{ slide: 1 }">
+        <div class="container mx-auto px-4 max-w-6xl relative">
+      
           <h2 class="font-bold text-3xl md:text-4xl text-center mb-12">
-            Habilidades Técnicas
+            Habilidades
           </h2>
-          <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto"
-          >
+      
+          <!-- Botones -->
+          <div class="flex justify-center gap-4 mb-8">
+            <button @click="slide = 1" :class="slide === 1 ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'" class="px-4 py-2 rounded-full border border-blue-500 font-semibold">
+              Técnicas
+            </button>
+            <button @click="slide = 2" :class="slide === 2 ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'" class="px-4 py-2 rounded-full border border-blue-500 font-semibold">
+              Blandas
+            </button>
+          </div>
+      
+          <!-- Contenedor fijo para evitar que se mueva el layout -->
+          <div class="relative h-auto min-h-[300px]">
+            <!-- Slide 1 -->
             <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+              x-show="slide === 1"
+              class="absolute inset-0 transition-opacity duration-500"
+              :class="{ 'opacity-100': slide === 1, 'opacity-0 pointer-events-none': slide !== 1 }"
             >
-              Java
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <template x-for="tech in ['Java', 'Python', 'Jira', 'SQL', 'Tailwind CSS', 'JavaScript', 'HTML', 'CSS 3']" :key="tech">
+                  <div class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+                    <span x-text="tech"></span>
+                  </div>
+                </template>
+              </div>
             </div>
+      
+            <!-- Slide 2 -->
             <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+              x-show="slide === 2"
+              class="absolute inset-0 transition-opacity duration-500"
+              :class="{ 'opacity-100': slide === 2, 'opacity-0 pointer-events-none': slide !== 2 }"
             >
-              Python
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              Jira
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              SQL
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              Tailwind CSS
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              JavaScript
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              HTML
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              CSS 3
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <template x-for="soft in ['Comunicación Asertiva', 'Buena Escucha', 'Adaptabilidad', 'Resiliencia', 'Liderazgo', 'Empatía', 'Trabajo en Equipo', 'Enfocada']" :key="soft">
+                  <div class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+                    <span x-text="soft"></span>
+                  </div>
+                </template>
+              </div>
             </div>
           </div>
+      
         </div>
       </section>
-
-      <!-- Soft Skills Section -->
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          <h2 class="font-bold text-3xl md:text-4xl text-center mb-12">
-            Habilidades Blandas
-          </h2>
-          <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto"
-          >
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              Comunicación Asertiva
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              Buena Escucha
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              Adaptabilidad
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              Resiliencia
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              Liderazgo
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              Empatía
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              Trabajo en Equipo
-            </div>
-            <div
-              class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-            >
-              Enfocada
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </main>
 
     <!-- Footer -->
