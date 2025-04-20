@@ -169,7 +169,7 @@
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div
-              class="rounded-lg border-blue-100 border-4 shadow-lg hover:shadow-blue-500/50 p-6 transition-all duration-300 transform hover:-translate-y-2"
+              class="rounded-lg border-violet-100 border-4  hover:shadow-violet-500/50 shadow-lg  p-6 transition-all duration-300 transform hover:-translate-y-2"
             >
               <h3 class="text-xl font-semibold mb-4">Python Projects</h3>
               <p class="text-gray-600">
@@ -177,7 +177,7 @@
               </p>
             </div>
             <div
-              class="rounded-lg border-blue-100 border-4 shadow-lg hover:shadow-blue-500/50 p-6 transition-all duration-300 transform hover:-translate-y-2"
+              class="rounded-lg border-violet-100 border-4 shadow-lg hover:shadow-violet-500/50 p-6 transition-all duration-300 transform hover:-translate-y-2"
             > <a href="/src/pages/WebPages.html">    
               <h3 class="text-xl font-semibold mb-4">Web Pages</h3>
               <p class="text-gray-600">
@@ -185,7 +185,7 @@
               </p> </a>
             </div>
             <div
-              class="rounded-lg border-blue-100 border-4 shadow-lg hover:shadow-blue-500/50 p-6 transition-all duration-300 transform hover:-translate-y-2"
+              class="rounded-lg border-violet-100 border-4 shadow-lg hover:shadow-violet-500/50 p-6 transition-all duration-300 transform hover:-translate-y-2"
             ><a href="/src/pages/javaProject.html">
               <h3 class="text-xl font-semibold mb-4">Java</h3>
               <p class="text-gray-600">
@@ -205,10 +205,10 @@
       
           <!-- Botones -->
           <div class="flex justify-center gap-4 mb-8">
-            <button @click="slide = 1" :class="slide === 1 ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'" class="px-4 py-2 rounded-full border border-blue-500 font-semibold">
+            <button @click="slide = 1" :class="slide === 1 ? 'bg-violet-600 text-white' : 'bg-white text-violet-500'" class="px-4 py-2 rounded-full border border-violet-600 font-semibold">
               Técnicas
             </button>
-            <button @click="slide = 2" :class="slide === 2 ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'" class="px-4 py-2 rounded-full border border-blue-500 font-semibold">
+            <button @click="slide = 2" :class="slide === 2 ? 'bg-violet-600 text-white' : 'bg-white text-violet-500'" class="px-4 py-2 rounded-full border border-violet-600 font-semibold">
               Blandas
             </button>
           </div>
@@ -222,8 +222,8 @@
               :class="{ 'opacity-100': slide === 1, 'opacity-0 pointer-events-none': slide !== 1 }"
             >
               <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <template x-for="tech in ['Java', 'Python', 'Jira', 'SQL', 'Tailwind CSS', 'JavaScript', 'HTML', 'CSS 3']" :key="tech">
-                  <div class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+                <template x-for="tech in ['Java', 'Python', 'Jira', 'SQL', 'Tailwind CSS', 'JavaScript', 'HTML', 'CSS 3', 'Spring Boot', 'Reflex', 'IntelliJ', 'Git']" :key="tech">
+                  <div class="border-4 border-violet-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-violet-300 transition-all">
                     <span x-text="tech"></span>
                   </div>
                 </template>
@@ -238,7 +238,7 @@
             >
               <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                 <template x-for="soft in ['Comunicación Asertiva', 'Buena Escucha', 'Adaptabilidad', 'Resiliencia', 'Liderazgo', 'Empatía', 'Trabajo en Equipo', 'Enfocada']" :key="soft">
-                  <div class="border-4 border-blue-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+                  <div class="border-4 border-violet-100 rounded-lg p-4 flex justify-center items-center h-16 md:h-20 shadow-sm hover:shadow-md hover:border-violet-300 transition-all">
                     <span x-text="soft"></span>
                   </div>
                 </template>
@@ -260,13 +260,13 @@
               href="https://github.com/jennifer-Arciniegas"
               class="hover:opacity-80 transition-opacity"
             >
-              <img src="/src/img/github.png" alt="GitHub" class="h-8" />
+             <div class="bg-white rounded-2xl">  <img src="/src/img/github.png" alt="GitHub" class="h-8" /> </div>
             </a>
             <a
               href="https://www.linkedin.com/in/jennifer-arciniegas-arciniegas-300628245/"
               class="hover:opacity-80 transition-opacity"
             >
-              <img src="/src/img/linkedinDark.png" alt="LinkedIn" class="h-8" />
+              <img src="/src/img/linkedinRedondo.png" alt="LinkedIn" class="h-8" />
             </a>
           </div>
           <div class="text-center text-sm">
